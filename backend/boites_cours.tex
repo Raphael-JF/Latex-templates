@@ -1,0 +1,820 @@
+\definecolor{rouge}{RGB}{255, 0, 0}
+\definecolor{bleu}{RGB}{0, 0, 255}
+
+\definecolor{mayonnaise}{RGB}{255, 253, 233}
+\definecolor{magenta}{RGB}{224, 209, 240}
+
+
+% Cours
+
+\newmdenv[
+    nobreak=true,
+    topline=true,
+    bottomline=true,
+    rightline=true,
+    leftline=true,
+    linewidth=0.5pt,
+    linecolor=black,
+    backgroundcolor=mayonnaise,
+    innerleftmargin=10pt,
+    innerrightmargin=2.5em,
+    innertopmargin=5pt,
+    innerbottommargin=5pt,
+    skipabove=0.15cm,
+    skipbelow=0.35cm,
+]{boite_definition}
+
+\newcounter{boite}
+\setcounter{boite}{1}
+
+
+\newenvironment{definition}[2]
+{
+    \vspace{15pt}
+    \begin{boite_definition}
+    \if\relax\detokenize{#1}\relax
+        \textbf{\textcolor{rouge}{Définition \numerochapitre.\arabic{boite}}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+        \stepcounter{boite}
+    \else
+        \textbf{\textcolor{rouge}{Définition #1}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+    \fi \\
+    
+    
+}
+{
+    \end{boite_definition}
+}
+
+\newmdenv[
+  nobreak=true,
+  topline=true,
+  bottomline=true,
+  rightline=true,
+  leftline=true,
+  linewidth=0.5pt,
+  linecolor=white,
+  backgroundcolor=white,
+  innerleftmargin=10pt,
+  innerrightmargin=2.5em,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=0.15cm,
+  skipbelow=0.35cm,
+]{boite_exemple}
+
+
+\newenvironment{exemple}[2]
+{
+    \vspace{15pt}
+    \begin{boite_exemple}
+    \if\relax\detokenize{#1}\relax
+        \textbf{\textcolor{bleu}{Exemple \numerochapitre.\arabic{boite}}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+        \stepcounter{boite}
+    \else
+        \textbf{\textcolor{bleu}{Exemple #1}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+    \fi \\
+    
+    
+}
+{
+    \end{boite_exemple}
+}
+
+\newmdenv[
+  nobreak=true,
+  topline=true,
+  bottomline=true,
+  rightline=true,
+  leftline=true,
+  linewidth=0.5pt,
+  linecolor=black,
+  backgroundcolor=magenta,
+  innerleftmargin=10pt,
+  innerrightmargin=2.5em,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=0.15cm,
+  skipbelow=0.35cm,
+]{boite_proposition}
+
+\newenvironment{proposition}[2]
+{
+    \vspace{15pt}
+    \begin{boite_proposition}
+    \if\relax\detokenize{#1}\relax
+        \textbf{\textcolor{rouge}{Proposition \numerochapitre.\arabic{boite}}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+        \stepcounter{boite}
+    \else
+        \textbf{\textcolor{rouge}{Proposition #1}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+    \fi \\
+    
+    
+}
+{
+    \end{boite_proposition}
+}
+
+\newmdenv[
+  nobreak=true,
+  topline=true,
+  bottomline=true,
+  rightline=true,
+  leftline=true,
+  linewidth=0.5pt,
+  linecolor=black,
+  backgroundcolor=magenta,
+  innerleftmargin=10pt,
+  innerrightmargin=2.5em,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=0.15cm,
+  skipbelow=0.35cm,
+]{boite_theoreme}
+
+
+\newenvironment{theoreme}[2]
+{
+    \vspace{15pt}
+    \begin{boite_theoreme}
+    \if\relax\detokenize{#1}\relax
+        \textbf{\textcolor{rouge}{Théorème \numerochapitre.\arabic{boite}}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+        \stepcounter{boite}
+    \else
+        \textbf{\textcolor{rouge}{Théorème #1}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+    \fi \\
+    
+    
+}
+{
+    \end{boite_theoreme}
+}
+
+
+\newmdenv[
+  nobreak=true,
+  topline=true,
+  bottomline=true,
+  rightline=true,
+  leftline=true,
+  linewidth=0.5pt,
+  linecolor=black,
+  backgroundcolor=white,
+  innerleftmargin=10pt,
+  innerrightmargin=2.5em,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=0.15cm,
+  skipbelow=0.35cm,
+]{boite_demonstration}
+
+
+\newenvironment{demonstration}
+{
+    \vspace{15pt}
+    \begin{boite_demonstration}
+    \textbf{\textcolor{rouge}{Démonstration}}\\ \\
+}
+{
+    \end{boite_demonstration}
+    
+}
+
+
+\newmdenv[
+  nobreak=true,
+  topline=true,
+  bottomline=true,
+  rightline=true,
+  leftline=true,
+  linewidth=0.5pt,
+  linecolor=white,
+  backgroundcolor=white,
+  innerleftmargin=10pt,
+  innerrightmargin=2.5em,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=0.15cm,
+  skipbelow=0.35cm,
+]{boite_remarque}
+
+
+\newenvironment{remarque}[2]
+{
+    \vspace{15pt}
+    \begin{boite_remarque}
+    \if\relax\detokenize{#1}\relax
+        \textbf{\textcolor{bleu}{Remarque \numerochapitre.\arabic{boite}}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+        \stepcounter{boite}
+    \else
+        \textbf{\textcolor{bleu}{Remarque #1}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+    \fi \\
+    
+    
+}
+{
+    \end{boite_remarque}
+}
+
+\newmdenv[
+  nobreak=true,
+  topline=true,
+  bottomline=true,
+  rightline=true,
+  leftline=true,
+  linewidth=0.5pt,
+  linecolor=bleu,
+  backgroundcolor=white,
+  innerleftmargin=10pt,
+  innerrightmargin=2.5em,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=0.15cm,
+  skipbelow=0.35cm,
+]{boite_implementation}
+
+\newenvironment{implementation}[1]
+{   
+    \vspace{15pt}
+    \begin{boite_implementation}
+    \textbf{\textcolor{bleu}{Implémentation}}\textit{ - #1}
+     \\ \\
+}
+{    
+    \end{boite_implementation}
+}
+
+\newmdenv[
+  nobreak=true,
+  topline=true,
+  bottomline=true,
+  rightline=true,
+  leftline=true,
+  linewidth=0.5pt,
+  linecolor=black,
+  backgroundcolor=mayonnaise,
+  innerleftmargin=10pt,
+  innerrightmargin=2.5em,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=0.15cm,
+  skipbelow=0.35cm,
+]{boite_question}
+
+
+\newenvironment{question}[2]
+{
+    \vspace{15pt}
+    \begin{boite_question}
+    \if\relax\detokenize{#1}\relax
+        \textbf{\textcolor{rouge}{Question \numerochapitre.\arabic{boite}}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+        \stepcounter{boite}
+    \else
+        \textbf{\textcolor{rouge}{Question #1}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+    \fi \\
+}
+{
+    \end{boite_question}
+}
+
+\newmdenv[
+  nobreak=true,
+  topline=true,
+  bottomline=true,
+  rightline=true,
+  leftline=true,
+  linewidth=0.5pt,
+  linecolor=black,
+  backgroundcolor=white,
+  innerleftmargin=10pt,
+  innerrightmargin=2.5em,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=0.15cm,
+  skipbelow=0.35cm,
+]{boite_corollaire}
+
+
+
+\newenvironment{corollaire}[2]
+{
+    \vspace{15pt}
+    \begin{boite_corollaire}
+    \if\relax\detokenize{#1}\relax
+        \textbf{\textcolor{rouge}{Corollaire \numerochapitre.\arabic{boite}}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+        \stepcounter{boite}
+    \else
+        \textbf{\textcolor{rouge}{Corollaire #1}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+    \fi \\
+    
+    
+}
+{
+    \end{boite_corollaire}
+}
+
+
+\newenvironment{lemme}[2]
+{
+    \vspace{15pt}
+    \begin{boite_theoreme}
+    \if\relax\detokenize{#1}\relax
+        \textbf{\textcolor{rouge}{Lemme \numerochapitre.\arabic{boite}}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+        \stepcounter{boite}
+    \else
+        \textbf{\textcolor{rouge}{Lemme #1}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+    \fi \\
+    
+    
+}
+{
+    \end{boite_theoreme}
+}
+\newcounter{exercice}
+\setcounter{exercice}{1}
+\newenvironment{exercice}[2]
+{
+    \vspace{15pt}
+    \begin{boite_remarque}
+    \if\relax\detokenize{#1}\relax
+        \textbf{\textcolor{bleu}{Exercice \numerochapitre.\arabic{exercice}}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+        \stepcounter{exercice}
+    \else
+        \textbf{\textcolor{bleu}{Exercice #1}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+    \fi \\
+    
+    
+}
+{
+    \end{boite_remarque}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newmdenv[
+    nobreak=false,
+    topline=true,
+    bottomline=true,
+    rightline=true,
+    leftline=true,
+    linewidth=0.5pt,
+    linecolor=black,
+    backgroundcolor=mayonnaise,
+    innerleftmargin=10pt,
+    innerrightmargin=2.5em,
+    innertopmargin=5pt,
+    innerbottommargin=5pt,
+    skipabove=0.15cm,
+    skipbelow=0.35cm,
+]{boite_definition_break}
+
+
+\newenvironment{definitionbreak}[2]
+{
+    \vspace{15pt}
+    \begin{boite_definition_break}
+    \if\relax\detokenize{#1}\relax
+        \textbf{\textcolor{rouge}{Définition \numerochapitre.\arabic{boite}}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+        \stepcounter{boite}
+    \else
+        \textbf{\textcolor{rouge}{Définition #1}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+    \fi \\
+    
+    
+}
+{
+    \end{boite_definition_break}
+}
+
+\newmdenv[
+  nobreak=false,
+  topline=true,
+  bottomline=true,
+  rightline=true,
+  leftline=true,
+  linewidth=0.5pt,
+  linecolor=white,
+  backgroundcolor=white,
+  innerleftmargin=10pt,
+  innerrightmargin=2.5em,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=0.15cm,
+  skipbelow=0.35cm,
+]{boite_exemple_break}
+
+
+\newenvironment{exemplebreak}[2]
+{
+    \vspace{15pt}
+    \begin{boite_exemple_break}
+    \if\relax\detokenize{#1}\relax
+        \textbf{\textcolor{bleu}{Exemple \numerochapitre.\arabic{boite}}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+        \stepcounter{boite}
+    \else
+        \textbf{\textcolor{bleu}{Exemple #1}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+    \fi \\
+    
+    
+}
+{
+    \end{boite_exemple_break}
+}
+
+\newmdenv[
+  nobreak=false,
+  topline=true,
+  bottomline=true,
+  rightline=true,
+  leftline=true,
+  linewidth=0.5pt,
+  linecolor=black,
+  backgroundcolor=magenta,
+  innerleftmargin=10pt,
+  innerrightmargin=2.5em,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=0.15cm,
+  skipbelow=0.35cm,
+]{boite_proposition_break}
+
+\newenvironment{propositionbreak}[2]
+{
+    \vspace{15pt}
+    \begin{boite_proposition_break}
+    \if\relax\detokenize{#1}\relax
+        \textbf{\textcolor{rouge}{Proposition \numerochapitre.\arabic{boite}}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+        \stepcounter{boite}
+    \else
+        \textbf{\textcolor{rouge}{Proposition #1}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+    \fi \\
+    
+    
+}
+{
+    \end{boite_proposition_break}
+}
+
+\newmdenv[
+  nobreak=false,
+  topline=true,
+  bottomline=true,
+  rightline=true,
+  leftline=true,
+  linewidth=0.5pt,
+  linecolor=black,
+  backgroundcolor=magenta,
+  innerleftmargin=10pt,
+  innerrightmargin=2.5em,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=0.15cm,
+  skipbelow=0.35cm,
+]{boite_theoreme_break}
+
+
+\newenvironment{theoremebreak}[2]
+{
+    \vspace{15pt}
+    \begin{boite_theoreme_break}
+    \if\relax\detokenize{#1}\relax
+        \textbf{\textcolor{rouge}{Théorème \numerochapitre.\arabic{boite}}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+        \stepcounter{boite}
+    \else
+        \textbf{\textcolor{rouge}{Théorème #1}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+    \fi \\
+    
+    
+}
+{
+    \end{boite_theoreme_break}
+}
+
+
+\newmdenv[
+  nobreak=false,
+  topline=true,
+  bottomline=true,
+  rightline=true,
+  leftline=true,
+  linewidth=0.5pt,
+  linecolor=black,
+  backgroundcolor=white,
+  innerleftmargin=10pt,
+  innerrightmargin=2.5em,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=0.15cm,
+  skipbelow=0.35cm,
+]{boite_demonstration_break}
+
+
+\newenvironment{demonstrationbreak}
+{
+    \vspace{15pt}
+    \begin{boite_demonstration_break}
+    \textbf{\textcolor{rouge}{Démonstration}}\\ \\
+}
+{
+    \end{boite_demonstration_break}
+    
+}
+
+
+\newmdenv[
+  nobreak=false,
+  topline=true,
+  bottomline=true,
+  rightline=true,
+  leftline=true,
+  linewidth=0.5pt,
+  linecolor=white,
+  backgroundcolor=white,
+  innerleftmargin=10pt,
+  innerrightmargin=2.5em,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=0.15cm,
+  skipbelow=0.35cm,
+]{boite_remarque_break}
+
+
+\newenvironment{remarquebreak}[2]
+{
+    \vspace{15pt}
+    \begin{boite_remarque_break}
+    \if\relax\detokenize{#1}\relax
+        \textbf{\textcolor{bleu}{Remarque \numerochapitre.\arabic{boite}}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+        \stepcounter{boite}
+    \else
+        \textbf{\textcolor{bleu}{Remarque #1}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+    \fi \\
+    
+    
+}
+{
+    \end{boite_remarque_break}
+}
+
+\newmdenv[
+  nobreak=false,
+  topline=true,
+  bottomline=true,
+  rightline=true,
+  leftline=true,
+  linewidth=0.5pt,
+  linecolor=bleu,
+  backgroundcolor=white,
+  innerleftmargin=10pt,
+  innerrightmargin=2.5em,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=0.15cm,
+  skipbelow=0.35cm,
+]{boite_implementation_break}
+
+\newenvironment{implementationbreak}[1]
+{   
+    \vspace{15pt}
+    \begin{boite_implementation_break}
+    \textbf{\textcolor{bleu}{Implémentation}}\textit{ - #1}
+     \\ \\
+}
+{    
+    \end{boite_implementation_break}
+}
+
+\newmdenv[
+  nobreak=false,
+  topline=true,
+  bottomline=true,
+  rightline=true,
+  leftline=true,
+  linewidth=0.5pt,
+  linecolor=black,
+  backgroundcolor=mayonnaise,
+  innerleftmargin=10pt,
+  innerrightmargin=2.5em,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=0.15cm,
+  skipbelow=0.35cm,
+]{boite_question_break}
+
+
+\newenvironment{questionbreak}[2]
+{
+    \vspace{15pt}
+    \begin{boite_question_break}
+    \if\relax\detokenize{#1}\relax
+        \textbf{\textcolor{rouge}{Question \numerochapitre.\arabic{boite}}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+        \stepcounter{boite}
+    \else
+        \textbf{\textcolor{rouge}{Question #1}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+    \fi \\
+}
+{
+    \end{boite_question_break}
+}
+
+\newmdenv[
+  nobreak=false,
+  topline=true,
+  bottomline=true,
+  rightline=true,
+  leftline=true,
+  linewidth=0.5pt,
+  linecolor=black,
+  backgroundcolor=white,
+  innerleftmargin=10pt,
+  innerrightmargin=2.5em,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  skipabove=0.15cm,
+  skipbelow=0.35cm,
+]{boite_corollaire_break}
+
+
+
+\newenvironment{corollairebreak}[2]
+{
+    \vspace{15pt}
+    \begin{boite_corollaire_break}
+    \if\relax\detokenize{#1}\relax
+        \textbf{\textcolor{rouge}{Corollaire \numerochapitre.\arabic{boite}}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+        \stepcounter{boite}
+    \else
+        \textbf{\textcolor{rouge}{Corollaire #1}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+    \fi \\
+    
+    
+}
+{
+    \end{boite_corollaire_break}
+}
+
+
+\newenvironment{lemmebreak}[2]
+{
+    \vspace{15pt}
+    \begin{boite_theoreme_break}
+    \if\relax\detokenize{#1}\relax
+        \textbf{\textcolor{rouge}{Lemme \numerochapitre.\arabic{boite}}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+        \stepcounter{boite}
+    \else
+        \textbf{\textcolor{rouge}{Lemme #1}}%
+        \if\relax\detokenize{#2}\relax
+        \else
+            \textit{ - #2}
+        \fi
+    \fi \\
+    
+    
+}
+{
+    \end{boite_theoreme_break}
+}

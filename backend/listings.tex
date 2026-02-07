@@ -1,0 +1,229 @@
+\definecolor{keywordcolor}{RGB}{133, 153, 0}  % les mots-clés
+\definecolor{commentcolor}{RGB}{147, 161, 161} % les commentaires
+\definecolor{stringcolor}{RGB}{42, 161, 152}  % les chaînes de caractères
+
+\lstnewenvironment{lstOCaml}
+{\lstset{
+    language=[Objective]Caml,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{keywordcolor},
+    commentstyle=\color{commentcolor},
+    stringstyle=\color{stringcolor},
+    backgroundcolor=\color{white},
+    numbers=left,
+    numberstyle=\ttfamily,
+    numbersep=-1.5em,
+    stepnumber=1,
+    frame=l,
+    framexleftmargin=-2.25em,
+    tabsize=2,
+    literate=%
+    {é}{{\'e}}{1}%
+    {è}{{\`e}}{1}%
+    {à}{{\`a}}{1}%
+    {ç}{{\c{c}}}{1}%
+    {œ}{{\oe}}{1}%
+    {ù}{{\`u}}{1}%
+    {É}{{\'E}}{1}%
+    {È}{{\`E}}{1}%
+    {À}{{\`A}}{1}%
+    {Ç}{{\c{C}}}{1}%
+    {Œ}{{\OE}}{1}%
+    {Ê}{{\^E}}{1}%
+    {ê}{{\^e}}{1}%
+    {î}{{\^i}}{1}%
+    {ô}{{\^o}}{1}%
+    {û}{{\^u}}{1}%
+    {ä}{{\"{a}}}1
+    {ë}{{\"{e}}}1
+    {ï}{{\"{i}}}1
+    {ö}{{\"{o}}}1
+    {ü}{{\"{u}}}1
+    {û}{{\^{u}}}1
+    {â}{{\^{a}}}1
+    {Â}{{\^{A}}}1
+    {Î}{{\^{I}}}1
+}}{}
+ 
+\lstnewenvironment{lstC}
+{\lstset{
+    language=C,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{keywordcolor},
+    commentstyle=\color{commentcolor},
+    stringstyle=\color{stringcolor},
+    backgroundcolor=\color{white},
+    numbers=left,
+    numberstyle=\ttfamily,
+    numbersep=-1.5em,
+    stepnumber=1,
+    frame=l,
+    framexleftmargin=-2.25em,
+    tabsize=2,
+    literate=%
+    {é}{{\'e}}{1}%
+    {è}{{\`e}}{1}%
+    {à}{{\`a}}{1}%
+    {ç}{{\c{c}}}{1}%
+    {œ}{{\oe}}{1}%
+    {ù}{{\`u}}{1}%
+    {É}{{\'E}}{1}%
+    {È}{{\`E}}{1}%
+    {À}{{\`A}}{1}%
+    {Ç}{{\c{C}}}{1}%
+    {Œ}{{\OE}}{1}%
+    {Ê}{{\^E}}{1}%
+    {ê}{{\^e}}{1}%
+    {î}{{\^i}}{1}%
+    {ô}{{\^o}}{1}%
+    {û}{{\^u}}{1}%
+    {ä}{{\"{a}}}1
+    {ë}{{\"{e}}}1
+    {ï}{{\"{i}}}1
+    {ö}{{\"{o}}}1
+    {ü}{{\"{u}}}1
+    {û}{{\^{u}}}1
+    {â}{{\^{a}}}1
+    {Â}{{\^{A}}}1
+    {Î}{{\^{I}}}1
+}}{}
+
+\lstnewenvironment{lstPython}
+{\lstset{
+    language=Python,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{keywordcolor},
+    commentstyle=\color{commentcolor},
+    stringstyle=\color{stringcolor},
+    backgroundcolor=\color{white},
+    numbers=left,
+    numberstyle=\ttfamily,
+    numbersep=-1.5em,
+    stepnumber=1,
+    frame=l,
+    framexleftmargin=-2.25em,
+    tabsize=2,
+    literate=%
+    {é}{{\'e}}{1}%
+    {è}{{\`e}}{1}%
+    {à}{{\`a}}{1}%
+    {ç}{{\c{c}}}{1}%
+    {œ}{{\oe}}{1}%
+    {ù}{{\`u}}{1}%
+    {É}{{\'E}}{1}%
+    {È}{{\`E}}{1}%
+    {À}{{\`A}}{1}%
+    {Ç}{{\c{C}}}{1}%
+    {Œ}{{\OE}}{1}%
+    {Ê}{{\^E}}{1}%
+    {ê}{{\^e}}{1}%
+    {î}{{\^i}}{1}%
+    {ô}{{\^o}}{1}%
+    {û}{{\^u}}{1}%
+    {ä}{{\"{a}}}1
+    {ë}{{\"{e}}}1
+    {ï}{{\"{i}}}1
+    {ö}{{\"{o}}}1
+    {ü}{{\"{u}}}1
+    {û}{{\^{u}}}1
+    {â}{{\^{a}}}1
+    {Â}{{\^{A}}}1
+    {Î}{{\^{I}}}1
+}}{}
+
+\lstnewenvironment{lstASM}
+{\lstset{
+    language=[x86masm]Assembler, % ou 'Assembler' si ton package ne reconnaît pas MASM
+    basicstyle=\ttfamily,
+    keywordstyle=\color{keywordcolor},
+    commentstyle=\color{commentcolor},
+    stringstyle=\color{stringcolor},
+    backgroundcolor=\color{white},
+    numbers=left,
+    numberstyle=\ttfamily,
+    numbersep=-1.5em,
+    stepnumber=1,
+    frame=l,
+    mathescape=true,
+    framexleftmargin=-2.25em,
+    tabsize=4,
+    showstringspaces=false,
+    literate=% 
+    {é}{{\'e}}{1}%
+    {è}{{\`e}}{1}%
+    {à}{{\`a}}{1}%
+    {ç}{{\c{c}}}{1}%
+    {œ}{{\oe}}{1}%
+    {ù}{{\`u}}{1}%
+    {É}{{\'E}}{1}%
+    {È}{{\`E}}{1}%
+    {À}{{\`A}}{1}%
+    {Ç}{{\c{C}}}{1}%
+    {Œ}{{\OE}}{1}%
+    {Ê}{{\^E}}{1}%
+    {ê}{{\^e}}{1}%
+    {î}{{\^i}}{1}%
+    {ô}{{\^o}}{1}%
+    {û}{{\^u}}{1}%
+    {ä}{{\"{a}}}1
+    {ë}{{\"{e}}}1
+    {ï}{{\"{i}}}1
+    {ö}{{\"{o}}}1
+    {ü}{{\"{u}}}1
+    {â}{{\^{a}}}1
+    {Â}{{\^{A}}}1
+    {Î}{{\^{I}}}1
+}}
+{}
+
+
+
+\lstdefinelanguage{LNat}{
+    morekeywords={tant,que,pour,tout,si,sinon,initialiser,renvoyer,attendre la fin, afficher, debut, fin, alors, faire, retourner, fonction},
+    sensitive=false,
+    morecomment=[l]{//},
+}
+
+\lstnewenvironment{lstLNat}
+{\lstset{
+    language=LNat,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{keywordcolor},
+    commentstyle=\color{commentcolor},
+    stringstyle=\color{stringcolor},
+    backgroundcolor=\color{white},
+    numbers=left,
+    numberstyle=\ttfamily,
+    numbersep=-1.5em,
+    stepnumber=1,
+    frame=l,
+    mathescape=true,
+    framexleftmargin=-2.25em,
+    tabsize=2,
+    literate=%
+    {é}{{\'e}}{1}%
+    {è}{{\`e}}{1}%
+    {à}{{\`a}}{1}%
+    {ç}{{\c{c}}}{1}%
+    {œ}{{\oe}}{1}%
+    {ù}{{\`u}}{1}%
+    {É}{{\'E}}{1}%
+    {È}{{\`E}}{1}%
+    {À}{{\`A}}{1}%
+    {Ç}{{\c{C}}}{1}%
+    {Œ}{{\OE}}{1}%
+    {Ê}{{\^E}}{1}%
+    {ê}{{\^e}}{1}%
+    {î}{{\^i}}{1}%
+    {ô}{{\^o}}{1}%
+    {û}{{\^u}}{1}%
+    {ä}{{\"{a}}}1
+    {ë}{{\"{e}}}1
+    {ï}{{\"{i}}}1
+    {ö}{{\"{o}}}1
+    {ü}{{\"{u}}}1
+    {û}{{\^{u}}}1
+    {â}{{\^{a}}}1
+    {Â}{{\^{A}}}1
+    {Î}{{\^{I}}}1}
+}{}

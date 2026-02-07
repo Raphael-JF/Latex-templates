@@ -1,0 +1,126 @@
+% texte indiquant le nom du cours, formulation comprise
+\newcommand{\texteNomCours}{Cours de}  
+
+% texte indiquant le nom du professeur encadrant, formulation comprise
+\newcommand{\texteNomProf}{cours dispensé par } 
+
+% numéro du chapitre
+\newcommand{\numeroChapitre}{0}
+
+% nom du chapitre
+\newcommand{\texteNomChapitre}{} 
+
+\documentclass[12pt]{article}
+
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=1.5cm,right=1.5cm]{geometry}
+
+% Packages de base
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}      % pour personnaliser en-têtes et pieds
+\usepackage[french]{babel}   % <-- gère la langue
+
+% Maths
+\usepackage{amsmath}
+\usepackage{amssymb} % pour mathbb
+\usepackage{mathtools} 
+\usepackage{esint} % intégrale avec un rond
+\usepackage{dsfont} % pour l'indicatrice
+
+
+% Trucs en plus
+\usepackage{xcolor} % gestion des couleurs
+\usepackage{listings} % pour le code source
+\usepackage{enumitem} % pour personnaliser les listes
+\usepackage{multicol} % pour les listes en plusieurs colonnes
+\usepackage{stmaryrd} % pour les intervalles d'entiers
+\usepackage{graphicx} % pour insérer des images
+\graphicspath{ {figures/} }
+
+\usepackage[framemethod=tikz]{mdframed} % les boites jolies
+
+% Les graphiques
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+
+% Style des titres de sections et sous-sections
+\usepackage{titlesec}
+
+\usepackage{tocloft} % pour personnaliser la table des matières
+
+
+\usepackage[colorlinks=true, urlcolor=blue]{hyperref} % les liens
+
+\renewcommand{\thesection}{\Roman{section}} 
+\titleformat{\section}
+  {\Large\bfseries} % Style du titre
+  {\thesection} % Numéro de section
+  {0.5cm} % Espacement entre numéro et titre
+  {} % Pas de préfixe supplémentaire
+\titleformat{\subsection}
+  {\large\bfseries} % Style du titre
+  {\thesubsection} % Numéro de section
+  {0.4cm} % Espacement entre numéro et titre
+  {} % Pas de préfixe supplémentaire
+
+\setlength{\cftsecnumwidth}{3em}   % espace réservé au numéro de section
+\setlength{\cftsubsecnumwidth}{2.5em} % pour les sous-sections
+
+% Réglages fancyhdr
+\pagestyle{fancy}
+\fancyhf{} % vide tout
+
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\fancyfoot[L]{Notes de Raphaël JONTEF}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{Enseirb-Matmeca}
+\fancyhead[L]{\texteNomCours}
+\fancyhead[R]{C.\numeroChapitre~:~\texteNomChapitre} 
+
+\input{backend/boites_cours.tex}
+\input{backend/listings.tex}
+\begin{document}
+\input{backend/commands.tex}
+
+% Page de titre custom
+
+\hypersetup{pageanchor=false}
+\setlength{\headheight}{15pt}
+\begin{titlepage}
+    \centering
+    \vspace*{3cm}
+    {\huge Chapitre \numeroChapitre\par}
+    {\Huge \bfseries\texteNomChapitre \par} % nom  du chapitre
+    \vspace{2cm}
+    {\Large Notes rédigées par Raphaël JONTEF\par}
+    \vspace{0.5cm}
+    {\normalsize \texteNomProf \par}
+    \vspace{4cm}
+    {\small Enseirb-Matmeca\par}
+    {\small filière informatique\par}
+    \vfill
+    {\large \today\par}
+\end{titlepage}
+\hypersetup{pageanchor=true} % réactive pour le reste
+
+\tableofcontents
+\newpage
+
+\input{sections/introduction}
+\section{}
+\input{sections/section1}
+\section{}
+\input{sections/section2}
+\section{}
+\input{sections/section3}
+
+\section*{}
+\input{sections/conclusion}
+
+
+\end{document}
