@@ -8,26 +8,26 @@ read -r -p "Quel template souhaitez-vous importer ? Ils seront importés dans le
 
 case "$TEMPLATE_CHOICE" in
 	algonum)
-		TEMPLATE_DIR="$TMP_DIR/rapport-algonum"
+        NAME="rapport-algonum"
 		;;
 	cours)
-		TEMPLATE_DIR="$TMP_DIR/cours"
+        NAME="cours"
 		;;
 	*)
 		echo "❌ Choix invalide. Utilisez 'algonum' ou 'cours'."
 		exit 1
 		;;
 esac
-
+TEMPLATE_DIR="$TMP_DIR/$TEMPLATE_CHOICE"
 git clone --depth=1 "$REPO_URL" "$TMP_DIR"
 
 cp -r "$TMP_DIR/backend" .
 cp -r "$TEMPLATE_DIR" .
 
 if [ -f "$TMP_DIR/Makefile" ]; then
-	cp "$TMP_DIR/Makefile" .
+	cp "$TMP_DIR/Makefile" "./$NAME/Makefile"
 elif [ -f "$TEMPLATE_DIR/Makefile" ]; then
-	cp "$TEMPLATE_DIR/Makefile" .
+	cp "$TEMPLATE_DIR/Makefile" "./$NAME/Makefile"
 fi
 
 rm -rf "$TMP_DIR"
