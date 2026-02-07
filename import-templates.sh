@@ -18,7 +18,7 @@ case "$TEMPLATE_CHOICE" in
 		exit 1
 		;;
 esac
-TEMPLATE_DIR="$TMP_DIR/$TEMPLATE_CHOICE"
+TEMPLATE_DIR="$TMP_DIR/$NAME"
 git clone --depth=1 "$REPO_URL" "$TMP_DIR"
 
 cp -r "$TMP_DIR/backend" .
