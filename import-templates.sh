@@ -4,7 +4,7 @@ set -e
 REPO_URL="https://github.com/Raphael-JF/Latex-templates.git"
 TMP_DIR="$(mktemp -d)"
 
-read -r -p "Quel template souhaitez-vous importer ? (algonum/cours) : " TEMPLATE_CHOICE
+read -r -p "Quel template souhaitez-vous importer ? Ils seront importés dans le répertoire courant : " TEMPLATE_CHOICE
 
 case "$TEMPLATE_CHOICE" in
 	algonum)
