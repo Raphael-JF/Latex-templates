@@ -21,8 +21,8 @@ esac
 TEMPLATE_DIR="$TMP_DIR/$NAME"
 git clone --depth=1 "$REPO_URL" "$TMP_DIR"
 
-cp -r "$TMP_DIR/backend" .
 cp -r "$TEMPLATE_DIR" .
+cp -r "$TMP_DIR/backend" $NAME/
 
 if [ -f "$TMP_DIR/Makefile" ]; then
 	cp "$TMP_DIR/Makefile" "./$NAME/Makefile"
