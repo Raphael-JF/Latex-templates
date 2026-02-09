@@ -13,8 +13,11 @@ case "$TEMPLATE_CHOICE" in
 	cours)
         NAME="cours"
 		;;
+    alveus)
+        NAME="alveus"
+        ;;
 	*)
-		echo "❌ Choix invalide. Utilisez 'algonum' ou 'cours'."
+		echo "❌ Choix invalide. Utilisez 'algonum', 'cours' ou 'alveus'."
 		exit 1
 		;;
 esac
