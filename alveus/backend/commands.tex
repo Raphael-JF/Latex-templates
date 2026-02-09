@@ -1,0 +1,79 @@
+% commandes
+\newcommand{\notion}[1]{\textcolor{vert_fonce}{\textit{#1}}}
+\newcommand{\mb}[1]{\mathbb{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mr}[1]{\mathrm{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\ccode}[1]{\texttt{|#1|}}
+\newcommand{\ov}[1]{\overline{#1}}
+\newcommand{\abs}[1]{|#1|}
+\newcommand{\rev}[1]{\texttt{reverse(#1)}}
+\newcommand{\crev}[1]{\texttt{|reverse(#1)|}}
+
+\newcommand{\ie}{\textit{i.e.} }
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\bigO}{\mathcal{O}}
+\renewcommand{\L}{\mathcal{L}}
+
+\newcommand{\rg}[0]{\mathrm{rg}}
+\newcommand{\re}[0]{\mathrm{Re}}
+\newcommand{\im}[0]{\mathrm{Im}}
+\newcommand{\cl}[0]{\mathrm{cl}}
+\newcommand{\grad}[0]{\overrightarrow{\mathrm{grad}}}
+\renewcommand{\div}[0]{\mathrm{div}\,}
+\newcommand{\rot}[0]{\overrightarrow{\mathrm{rot}}\,}
+\newcommand{\vnabla}[0]{\overrightarrow{\nabla}}
+\newcommand{\spectre}[0]{\mathrm{Sp}}
+\renewcommand{\vec}[1]{\overrightarrow{#1}}
+\newcommand{\mat}[1]{\mathrm{Mat}_{#1}}
+\newcommand{\matrice}[1]{\mathcal{M}_{#1}}
+\newcommand{\sgEngendre}[1]{\left\langle #1 \right\rangle}
+\newcommand{\gpquotient}[1]{\mathbb{Z} / #1\mathbb{Z}}
+\newcommand{\norme}[1]{\lVert#1\rVert}
+\newcommand{\normet}[1]{||| #1 |||}
+\renewcommand{\d}[1]{\,\mathrm{d}#1}
+\newcommand{\ssi}[0]{\Longleftrightarrow}
+\newcommand{\adh}[1]{\overline{#1}}
+\newcommand{\intint}[2]{\llbracket #1 ,\, #2 \rrbracket}
+\newcommand{\seg}[2]{[#1\, ; \, #2]}
+\newcommand{\scal}[2]{\left( #1 | #2 \right)}
+\newcommand{\distance}[2]{\mathrm{d}(#1,\,#2)}
+\newcommand{\inte}[2]{\int_{#1}^{#2}}
+\newcommand{\somme}[2]{\sum_{#1}^{#2}}
+\newcommand{\attracteur}[2]{\mc{A}_{#2}^{#1}}
+\newcommand{\derive}[3]{\frac{\text{d}^{#1}#2}{\text{d}#3^{#1}}}
+\newcommand{\indicatrice}[0]{\mathds{1}}
+\newcommand{\esperance}[1]{\mathbb{E}\left(#1\right)}
+\newcommand{\esperancebig}[1]{\mathbb{E}\big(#1\big)}
+\newcommand{\esperanceBig}[1]{\mathbb{E}\Big(#1\Big)}
+\newcommand{\esperancebigg}[1]{\mathbb{E}\bigg(#1\bigg)}
+\newcommand{\esperanceBigg}[1]{\mathbb{E}\Bigg(#1\Bigg)}
+\newcommand{\tribu}[0]{\mathcal{T}}
+\newcommand{\univ}[0]{\Omega}
+\newcommand{\proba}[0]{\mathbb{P}}
+\newcommand{\probaset}[1]{\mathbb{P}\left(\left\{#1\right\}\right)}
+
+\newcommand{\derivepar}[3]{\frac{\partial^{#1}#2}{\partial#3^{#1}}}
+\newcommand{\fonction}[5]{%
+  \begin{align*}
+    #1 :\ & #2 \longrightarrow #3 \\
+          & #4 \longmapsto #5
+  \end{align*}
+}
+\newcommand{\flechelim}[2]{\xrightarrow[\;#1\;]{#2}}
+\newcommand{\symbolelim}[3]{\underset{#1}{\overset{{#2}}{#3}}}
+\newcommand{\vecc}[1]{\overrightarrow{\underline{#1}}}
+
+\newenvironment{enumeratebf}{
+    \begin{enumerate}[label=\textbf{\arabic*.}]
+}
+{
+    \end{enumerate}
+}
