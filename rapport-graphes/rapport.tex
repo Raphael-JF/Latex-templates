@@ -1,0 +1,105 @@
+\newcommand{\texteNumero}{Rapport de TD n°5}
+\newcommand{\texteTitre}{}
+
+
+\newcommand{\texteAuteurs}{
+    Raphaël Jontef\\
+    Martin Nadeau\\
+    Loïs Page
+}
+
+\newcommand{\texteDate}{S6 - Année 2025/2026}
+
+
+
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx} % pour inclure images
+\graphicspath{ {figures/} }
+\usepackage{amsmath}  % maths si nécessaire
+\usepackage{amssymb}  % maths si nécessaire
+\usepackage{stmaryrd} %crochet maths
+\usepackage{booktabs} % tableaux pro Pour des lignes plus jolies
+\usepackage{tabularx} % Pour l'ajustement automatique de la largeur
+
+% Language setting
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc} 
+
+% Set page size and margins
+\usepackage[letterpaper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm,marginparwidth=1.75cm]{geometry}
+
+
+% Useful packages
+\usepackage{multicol} % colonnes
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{float} % pour que les figures se placent bien
+\usepackage{listings} % pour inclure du code
+\usepackage{caption} % pour centrer les captions malgré les \\
+\captionsetup{justification=centering}
+
+
+
+
+
+\title{\texteTitre}
+\author{\texteAuteurs}
+\date{\texteDate}
+
+
+\input{backend/listings.tex}
+\begin{document}
+\input{backend/commands.tex}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+    \centering
+
+    \vspace*{1.5cm}
+
+    {\Huge\bfseries \texteNumero\par}
+
+    \vspace{0.8cm}
+
+    {\LARGE \texteTitre \par}
+
+    \vspace{7cm}
+
+    {\Large
+    \textbf{Auteurs :}\\
+    \texteAuteurs\par}
+
+    \vfill
+
+    {\large
+    \texteDate\\
+    ENSEIRB-MATMECA\\
+    Algorithmique des graphes
+    \par}
+
+    \vspace{1cm}
+
+\end{titlepage}
+\hypersetup{pageanchor=true} % réactive pour le reste
+
+
+\section{Exercice 1}
+\input{sections/section1}
+\newpage
+\section{Exercice 2}
+\input{sections/section2}
+\newpage
+\section{Exercice 3}
+\input{sections/section3}
+\newpage
+\section{Exercice 4}
+\input{sections/section4}
+
+
+\end{document}
+
+
+

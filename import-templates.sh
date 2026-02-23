@@ -17,8 +17,11 @@ case "$TEMPLATE_CHOICE" in
     alveus)
         NAME="alveus"
         ;;
+    graphes)
+        NAME="rapport-graphes"
+        ;;
 	*)
-		echo "❌ Choix invalide. Utilisez 'algonum', 'cours' ou 'alveus'."
+		echo "❌ Choix invalide. Utilisez 'algonum', 'cours', 'alveus' ou 'graphes'."
 		exit 1
 		;;
 esac
