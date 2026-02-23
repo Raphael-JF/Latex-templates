@@ -1,7 +1,7 @@
 
 % nom du chapitre
-\newcommand{\texteTitre}{Récapitulatif des modalités de concours} 
-\newcommand{\texteSousTitre}{Advance, Puissance Alpha}
+\newcommand{\texteTitre}{Mathématiques, chapitre 1} 
+\newcommand{\texteSousTitre}{Automatismes}
 
 \documentclass[12pt]{article}
 
@@ -82,37 +82,41 @@
 
 % Page de titre custom
 
-\hypersetup{pageanchor=false}
-\setlength{\headheight}{15pt}
-\begin{titlepage}
-    \centering
-    \vspace*{3cm}
-    {\Huge \bfseries\texteTitre \par} % nom  du chapitre
-    \vspace{1cm}
-    {\Large \texteSousTitre \par} % nom  du chapitre
+% \hypersetup{pageanchor=false}
+% \setlength{\headheight}{15pt}
+% \begin{titlepage}
+%     \centering
+%     \vspace*{3cm}
+%     {\Huge \bfseries\texteTitre \par} % nom  du chapitre
+%     \vspace{1cm}
+%     {\Large \texteSousTitre \par} % nom  du chapitre
 
-    \vfill
+%     \vfill
 
-    {\Large \href{https://www.alveusclub.com/}{Alveus} \par}
-    \vspace{1em}
-    {Rédigé par Raphaël JONTEF\par}
-    \vspace{0.5cm}
-    {\normalsize raphaeljontef@hotmail.com \par}
-    \vspace{1cm}
-    {\large \today\par}
-\end{titlepage}
-\hypersetup{pageanchor=true} % réactive pour le reste
+%     {\Large \href{https://www.alveusclub.com/}{Alveus} \par}
+%     \vspace{1em}
+%     {Rédigé par Raphaël JONTEF\par}
+%     \vspace{0.5cm}
+%     {\normalsize raphaeljontef@hotmail.com \par}
+%     \vspace{1cm}
+%     {\large \today\par}
+% \end{titlepage}
+% \hypersetup{pageanchor=true} % réactive pour le reste
 
-\tableofcontents
-\newpage
+% \tableofcontents
+% \newpage
 
 \input{sections/introduction}
-\section{}
+\section{Additions}
 \input{sections/section1}
-\section{}
+\section{Soustractions}
 \input{sections/section2}
-\section{}
+\section{Multiplications}
 \input{sections/section3}
+\section{Divisions}
+\input{sections/section4}
+\section{Priorités opératoires}
+\input{sections/section5}
 
 \section*{}
 \input{sections/conclusion}
