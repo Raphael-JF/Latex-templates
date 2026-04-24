@@ -9,6 +9,7 @@ templates=(
     "'cours' : Un template pour les cours et notes de cours"
     "'alveus' : Un template pour les projets Alveus"
     "'graphes' : Un template pour les rapports d'algorithmique des graphes"
+    "'projet' : Un template pour les gros projets de programmation."
 )
 
 echo "Les templates disponibles sont :"
@@ -34,6 +35,9 @@ case "$TEMPLATE_CHOICE" in
     graphes)
         NAME="rapport-graphes"
         ;;
+    projet)
+        NAME="rapport-projet"
+        ;;
 	*)
 		echo "❌ Choix invalide. Utilisez 'algonum', 'cours', 'alveus' ou 'graphes'."
 		exit 1
@@ -46,9 +50,9 @@ cp -r "$TEMPLATE_DIR" "$DEST_DIR"
 cp -r "$TMP_DIR/backend" "$DEST_DIR/"
 
 if [ -f "$TMP_DIR/Makefile" ]; then
-	cp "$TMP_DIR/Makefile" "$DEST_DIR/Makefile"
+	cp "$TMP_DIR/Makefile" "$DEST_DIR"
 elif [ -f "$TEMPLATE_DIR/Makefile" ]; then
-	cp "$TEMPLATE_DIR/Makefile" "$DEST_DIR/Makefile"
+	cp "$TEMPLATE_DIR/Makefile" "$DEST_DIR"
 fi
 
 rm -rf "$TMP_DIR"
