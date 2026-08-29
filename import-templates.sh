@@ -2,7 +2,7 @@
 set -e
 
 REPO_URL="https://github.com/Raphael-JF/Latex-templates.git"
-TMP_DIR="$(mktemp -d)"
+TMP_ROOT_DIR="$(mktemp -d)"
 
 templates=(
     "'algonum' : Un template pour les rapports d'algorithmique numérique"
@@ -18,43 +18,40 @@ for template in "${templates[@]}"; do
 done
 echo "---------------------------------"
 echo "Quel template souhaitez-vous importer ?"
-read -r -p ">" TEMPLATE_CHOICE
+read -r -p ">" TEMPLATE_DIR
 echo "Où souhaitez-vous importer le template ?"
 read -r -p ">" DEST_DIR
 
-case "$TEMPLATE_CHOICE" in
+case "$TEMPLATE_DIR" in
 	algonum)
-        NAME="rapport-algonum"
 		;;
 	cours)
-        NAME="cours"
 		;;
-    alveus)
-        NAME="alveus"
-        ;;
-    graphes)
-        NAME="rapport-graphes"
-        ;;
-    projet)
-        NAME="rapport-projet"
-        ;;
+  alveus)
+    ;;
+  graphes)
+    ;;
+  projet)
+    ;;
 	*)
 		echo "❌ Choix invalide. Utilisez 'algonum', 'cours', 'alveus' ou 'graphes'."
 		exit 1
 		;;
 esac
-TEMPLATE_DIR="$TMP_DIR/$NAME"
-git clone --depth=1 "$REPO_URL" "$TMP_DIR"
+git clone --depth=1 "$REPO_URL" "$TMP_ROOT_DIR"
 
-cp -r "$TEMPLATE_DIR" "$DEST_DIR"
-cp -r "$TMP_DIR/backend" "$DEST_DIR/"
+cp -r "$TMP_ROOT_DIR/$TEMPLATE_DIR" "$DEST_DIR"
+cp -r "$TMP_ROOT_DIR/backend" "$DEST_DIR/"
 
-if [ -f "$TMP_DIR/Makefile" ]; then
-	cp "$TMP_DIR/Makefile" "$DEST_DIR"
-elif [ -f "$TEMPLATE_DIR/Makefile" ]; then
-	cp "$TEMPLATE_DIR/Makefile" "$DEST_DIR"
+# prioritize Makefile from the template directory if it exists, otherwise use the one from the temporary directory
+if [ -f "$TMP_ROOT_DIR/Makefile" ]; then
+	cp "$TMP_ROOT_DIR/Makefile" "$DEST_DIR"
+elif [ -f "$TMP_ROOT_DIR/$TEMPLATE_DIR/Makefile" ]; then
+	cp "$TMP_ROOT_DIR/$TEMPLATE_DIR/Makefile" "$DEST_DIR"
 fi
 
-rm -rf "$TMP_DIR"
+
+
+rm -rf "$TMP_ROOT_DIR"
 
 echo "✅ Templates importés"
