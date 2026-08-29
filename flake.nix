@@ -41,7 +41,8 @@
           installShellCompletion --bash --cmd latexTemplate <<EOF
           _latexTemplate()
           {
-              local cur="''${COMP_WORDS[COMP_CWORD]}"
+              local cur
+              cur="\''${COMP_WORDS[COMP_CWORD]}"
 
               if (( COMP_CWORD == 1 )); then
                   COMPREPLY=(\$(compgen -W "${templateList}" -- "\$cur"))
@@ -50,7 +51,7 @@
 
           complete -F _latexTemplate latexTemplate
           EOF
-        '';
+        '';   
       };
   };
 }
