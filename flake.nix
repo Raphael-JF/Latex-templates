@@ -22,13 +22,11 @@
         version = "1.0";
 
         dontUnpack = true;
-
-        nativeBuildInputs = [
-          pkgs.installShellFiles
-        ];
+        nativeBuildInputs = [];
 
         installPhase = ''
           mkdir -p "$out/bin"
+          mkdir -p "$out/share/bash-completion/completions"
 
           substitute ${./latexTemplate.sh} \
             "$out/bin/latexTemplate" \
@@ -38,20 +36,20 @@
 
           chmod +x "$out/bin/latexTemplate"
 
-          installShellCompletion --bash --cmd latexTemplate <<EOF
-          _latexTemplate()
-          {
-              local cur
-              cur="\''${COMP_WORDS[COMP_CWORD]}"
+          cat > "$out/share/bash-completion/completions/latexTemplate" <<EOF
+        _latexTemplate()
+        {
+            local cur
+            cur="\''${COMP_WORDS[COMP_CWORD]}"
 
-              if (( COMP_CWORD == 1 )); then
-                  COMPREPLY=(\$(compgen -W "${templateList}" -- "\$cur"))
-              fi
-          }
+            if (( COMP_CWORD == 1 )); then
+                COMPREPLY=(\$(compgen -W "${templateList}" -- "\$cur"))
+            fi
+        }
 
-          complete -F _latexTemplate latexTemplate
-          EOF
-        '';   
-      };
+        complete -F _latexTemplate latexTemplate
+        EOF
+      '';     
+    };
   };
 }
