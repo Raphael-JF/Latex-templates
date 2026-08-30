@@ -20,6 +20,8 @@ mkdir -p "$DEST"
 
 cp -r "$TEMPLATES_DIR/$TEMPLATE" "$DEST/"
 cp -r "$TEMPLATES_DIR/backend" "$DEST/"
+cp "$TEMPLATES_DIR/flake.nix" "$DEST/"
+cp "$TEMPLATES_DIR/flake.lock" "$DEST/"
 
 if [ -f "$TEMPLATES_DIR/Makefile" ]; then
     cp "$TEMPLATES_DIR/Makefile" "$DEST/"
